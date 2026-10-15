@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Creative World</title>
+
+  <title>My Drawings | Ani's Art</title>
 
   <style>
     * {
@@ -15,113 +15,175 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #071426;
+      background: linear-gradient(135deg, #071426, #18264c);
       color: white;
+      min-height: 100vh;
     }
 
+    /* Header */
     header {
-      background: #0c1d35;
+      background: #08152b;
       padding: 22px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 15px;
+      border-bottom: 2px solid #4d61ff;
     }
 
     header h1 {
-      color: #4f80ff;
+      color: #8495ff;
+      font-size: 30px;
     }
 
-    nav a {
+    /* Back button */
+    .back-button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #4d61ff;
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      border-radius: 25px;
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #4f80ff;
+    .back-button:hover {
+      background: #8495ff;
+      color: #071426;
+      transform: translateY(-3px);
     }
 
-    .hero {
+    /* Introduction */
+    .intro {
       text-align: center;
-      padding: 65px 20px;
-      background: linear-gradient(135deg, #102c50, #071426);
+      padding: 55px 20px 35px;
     }
 
-    .hero h2 {
+    .intro h2 {
       font-size: 40px;
+      color: #91a1ff;
       margin-bottom: 15px;
     }
 
-    .hero p {
-      color: #cbd8ee;
-      font-size: 18px;
-      line-height: 1.7;
+    .intro p {
+      color: #d3def5;
+      font-size: 17px;
+      line-height: 1.8;
     }
 
+    /* Drawings gallery */
     .gallery {
-      padding: 45px 7%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 30px 60px;
     }
 
     .gallery h2 {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 12px;
-      color: #6e99ff;
-    }
-
-    .intro {
-      text-align: center;
       margin-bottom: 30px;
-      color: #cbd8ee;
+      font-size: 27px;
     }
 
     .pictures {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit, minmax(230px, 1fr)
+      );
       gap: 25px;
     }
 
+    /* Drawing cards */
     .card {
       background: #10233e;
-      border-radius: 14px;
+      border: 1px solid #344d91;
+      border-radius: 15px;
       overflow: hidden;
-      border: 1px solid #263f62;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px #315fff40;
+      transform: translateY(-7px);
+      box-shadow: 0 12px 30px #526aff35;
     }
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+    .drawing {
       display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .drawing:hover {
+      opacity: 0.85;
     }
 
     .card h3 {
-      padding: 15px 12px 8px;
       text-align: center;
-      color: #78a0ff;
+      color: #91a1ff;
+      padding: 17px 10px 8px;
     }
 
     .card p {
       text-align: center;
-      padding: 0 12px 18px;
-      color: #d1dced;
+      color: #d3def5;
+      padding: 0 12px 20px;
+      font-size: 14px;
     }
 
+    .hint {
+      text-align: center;
+      color: #aebce0;
+      margin-top: 25px;
+    }
+
+    /* Full-screen image viewer */
+    #imageViewer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.96);
+      justify-content: center;
+      align-items: center;
+      padding: 65px 20px 25px;
+    }
+
+    #fullImage {
+      display: block;
+      max-width: 95%;
+      max-height: 88vh;
+      object-fit: contain;
+      border: 3px solid #8495ff;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #526aff50;
+    }
+
+    #closeViewer {
+      position: absolute;
+      top: 12px;
+      right: 25px;
+      font-size: 45px;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    #closeViewer:hover {
+      color: #8495ff;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 25px;
-      background: #0c1d35;
-      color: #cbd8ee;
-      margin-top: 25px;
+      background: #08152b;
+      color: #bdc9e5;
+      border-top: 1px solid #344d91;
+      line-height: 2;
     }
 
     @media (max-width: 600px) {
@@ -130,13 +192,16 @@
         text-align: center;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 8px;
+      .intro h2 {
+        font-size: 31px;
       }
 
-      .hero h2 {
-        font-size: 30px;
+      .gallery {
+        padding: 20px 18px 40px;
+      }
+
+      .drawing {
+        height: 230px;
       }
     }
   </style>
@@ -144,67 +209,148 @@
 
 <body>
 
+  <!-- Website header -->
   <header>
-    <h1>My Creative World</h1>
+    <h1>🎨 Ani's Art</h1>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a href="index.html" class="back-button">
+      ← Back to Website
+    </a>
   </header>
 
-  <section class="hero" id="home">
-    <h2>Welcome to My Website!</h2>
+  <!-- Introduction -->
+  <section class="intro">
+    <h2>My Drawings ✏️</h2>
+
     <p>
-      Hello! Welcome to my creative world.<br>
-      Explore my favourite pictures and discover something beautiful.
+      Welcome to my drawing gallery!<br>
+      Here you can explore my artwork.
+      Click any drawing to see it in full screen.
     </p>
   </section>
 
-  <section class="gallery" id="gallery">
-    <h2>My Picture Gallery</h2>
-    <p class="intro">Here are five beautiful pictures!</p>
+  <!-- Drawings gallery -->
+  <section class="gallery">
+    <h2>✨ My Creative Collection ✨</h2>
 
     <div class="pictures">
 
       <div class="card">
-        <img src="keke.jpg" alt="a motorcycle">
-        <h3>a motorcycle</h3>
-        <p>beautiful shading</p>
+        <img
+          src="67777.jpg"
+          alt="My first drawing"
+          class="drawing"
+        >
+        <h3>Drawing One</h3>
+        <p>One of my creative artworks.</p>
       </div>
 
       <div class="card">
-        <img src="ohshi.jpg" alt="Colourful flowers">
-        <h3>the space</h3>
-        <p>the world is big.</p>
+        <img
+          src="idk.jpg"
+          alt="My second drawing"
+          class="drawing"
+        >
+        <h3>Drawing Two</h3>
+        <p>A drawing made with imagination.</p>
       </div>
 
       <div class="card">
-        <img src="needs.jpg" alt="Beautiful landscape">
-        <h3>Amazing doodle</h3>
-        <p>nice use of colours.</p>
+        <img
+          src="ohshi.jpg"
+          alt="My third drawing"
+          class="drawing"
+        >
+        <h3>Drawing Three</h3>
+        <p>Another piece from my collection.</p>
       </div>
 
       <div class="card">
-        <img src="idk.jpg" alt="Soccer ball">
-        <h3>wants and needs</h3>
-        <p>nice colouring.</p>
+        <img
+          src="keke.jpg"
+          alt="My fourth drawing"
+          class="drawing"
+        >
+        <h3>Drawing Four</h3>
+        <p>Creativity brought to life.</p>
       </div>
 
       <div class="card">
-        <img src="67777.jpg" alt="Creative artwork">
-        <h3>Son Goku</h3>
-        <p>powerful sayian.</p>
+        <img
+          src="needs.jpg"
+          alt="My fifth drawing"
+          class="drawing"
+        >
+        <h3>Drawing Five</h3>
+        <p>Thanks for exploring my artwork!</p>
       </div>
 
     </div>
+
+    <p class="hint">
+      💡 Tip: Click a drawing to enlarge it. Press × or Escape to close it.
+    </p>
   </section>
 
-  <footer id="contact">
-    <p>Made with ❤️ by Me</p>
-    <p>© 2026 My Creative World</p>
+  <!-- Full-screen image viewer -->
+  <div
+    id="imageViewer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full-screen drawing viewer"
+  >
+    <button
+      id="closeViewer"
+      aria-label="Close full-screen image"
+      type="button"
+    >×</button>
+
+    <img id="fullImage" src="" alt="">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Ani Collins</p>
+    <p>Dream • Create • Draw</p>
+    <p>© 2026 Ani's Art</p>
   </footer>
+
+  <!-- JavaScript for full-screen drawings -->
+  <script>
+    const drawings = document.querySelectorAll(".drawing");
+    const viewer = document.getElementById("imageViewer");
+    const fullImage = document.getElementById("fullImage");
+    const closeButton = document.getElementById("closeViewer");
+
+    drawings.forEach(function(drawing) {
+      drawing.addEventListener("click", function() {
+        fullImage.src = drawing.src;
+        fullImage.alt = drawing.alt;
+        viewer.style.display = "flex";
+        closeButton.focus();
+      });
+    });
+
+    function closeImage() {
+      viewer.style.display = "none";
+      fullImage.src = "";
+    }
+
+    closeButton.addEventListener("click", closeImage);
+
+    viewer.addEventListener("click", function(event) {
+      if (event.target === viewer) {
+        closeImage();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape" &&
+          viewer.style.display === "flex") {
+        closeImage();
+      }
+    });
+  </script>
 
 </body>
 </html>
