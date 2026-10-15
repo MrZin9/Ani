@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookingdom</title>
+    <link rel="stylesheet" href="cook.css">
+</head>
+<body>
+     
+
+    <h1>🍳 My Cook Recipe Book</h1>
+
+    <div class="food">
+        <img src="https://via.placeholder.com/300x200?text=Jollof+Rice" alt="Jollof Rice">
+        <h2>Fries</h2>
+        <button onclick="showRecipe('jollof')">Fries recipe</button>
+
+        <div class="recipe" id="jollof">
+            <h3>Ingredients</h3>
+            <ul>
+                <li>Ingredients List
+3 large Russet potatoes (or baking potatoes)
+2 tablespoons olive oil
+0.5 teaspoon salt
+0.25 teaspoon garlic powder (optional)
+
+</li>
+                
+            </ul>
+
+            <h3>Method</h3>
+            <p>1. Prep the Oven
+Heat the oven to 210°C (425°F).
+Line a large baking sheet with parchment paper. [1, 2, 3]
+
+2. Cut into Fries
+Wash and scrub the potatoes thoroughly.
+Slice the potatoes into long, 1 cm (\(\frac{1}{2}\text{-inch}\)) thick sticks.
+Tip: An adult should supervise or help with the sharp knife during this step. [1, 2, 3, 4, 5]
+3. Soak and Dry [1]
+Soak the potato sticks in a bowl of cold water for 10 minutes to remove excess starch.
+Drain the water and dry the potatoes completely with a clean kitchen towel.
+Note: Drying them thoroughly is the secret to making them truly crispy. [1, 2, 3, 4, 5]
+4. Season and Toss
+•	Place the dry potatoes on the baking sheet.
+•	Drizzle with the olive oil.
+•	Sprinkle the salt and garlic powder over them.
+•	Toss with clean hands until every fry is lightly coated in oil and spices.
+              Spread them out so they do not overlap. [1, 2, 3, 4]
+
+5. Bake Until Golden
+Bake for 20 to 25 minutes.
+Use a spatula to flip them halfway through the cooking time.
+Remove them when they are golden brown and crispy at the edges. [1, 2, 3, 4, 5]
+.</p>
+        </div>
+    </div>
+
+    <div class="food">
+        <img src="https://via.placeholder.com/300x200?text=Pancakes" alt="Pancakes">
+        <h2>Pizza</h2>
+        <button onclick="showRecipe('pancake')">Pizza Recipe</button>
+
+        <div class="recipe" id="pancake">
+            <h3>Ingredients</h3>
+            <ul>
+                <li>Ingredients
+For the Dough:
+•	\(1 \frac{1}{3}\) cups warm water (100°F to 110°F)
+•	1 packet (2 \(\frac{1}{4}\) teaspoons) instant yeast
+•	1 tablespoon granulated sugar
+•	\(3 \frac{1}{2}\) to 4 cups unbleached all-purpose flour (or bread flour for extra chew)
+•	2 tablespoons extra-virgin olive oil
+•	1 teaspoon salt [1]
+For the Sauce & Toppings:
+•	1 cup store-bought or homemade pizza sauce (crushed tomatoes with a pinch of salt)
+•	2 cups (8 oz) shredded low-moisture mozzarella cheese
+•	1 tablespoon olive oil (for brushing the crust)
+•	Optional: Pepperoni, fresh basil, sliced bell peppers, or onions [1]
+</li>
+                
+            </ul>
+
+            <h3>Method</h3>
+            <p>1. Make the Dough
+In a large bowl, whisk the warm water, sugar, and yeast together. Let it sit for 5 minutes until it becomes frothy. Add the flour, olive oil, and salt. Mix until the dough forms a cohesive, slightly sticky ball. [1, 2, 3, 4]
+2. Knead and Rise
+Knead the dough on a lightly floured surface for 5 to 7 minutes until it is smooth and elastic. Lightly oil a large bowl, place the dough inside, cover it with a warm towel or plastic wrap, and let it rise in a warm spot for 1 to 1.5 hours, or until it has doubled in size. [1, 2, 3, 4]
+3. Shape the Pizza
+Preheat your oven to 475°F (245°C). If using a pizza stone, preheat it with the oven. Punch down the dough to release air bubbles, then divide it in half (this recipe makes two 12-inch pizzas). On a lightly floured surface, stretch or roll the dough out to your desired thickness. [1, 2, 3]
+4. Assemble and Bake
+Transfer the dough to a parchment-lined or greased baking sheet. Brush the edges with a little olive oil. Spread a thin layer of sauce—leaving a half-inch border for the crust—top with mozzarella cheese, and add your toppings. Bake for 12 to 15 minutes, or until the crust is golden-brown and the cheese is bubbly. [1, 2, 3, 4, 5]
+</p>
+        </div>
+        <div>
+
+        </div>
+
+    <script>
+        function showRecipe(id) {
+            let recipe = document.getElementById(id);
+
+            if (recipe.style.display === "block") {
+                recipe.style.display = "none";
+            } else {
+                recipe.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>

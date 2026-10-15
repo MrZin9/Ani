@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up Page</title>
+<style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg, #fe4f4f, #fe4f4f);
+    }
+
+    .signup-container{
+      background:white;
+      padding:40px;
+      width:350px;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .signup-container h2{
+      text-align:center;
+      margin-bottom:25px;
+      color:#333;
+    }
+
+    .input-group{
+      margin-bottom:18px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:6px;
+      color:#555;
+      font-size:14px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:15px;
+    }
+
+    .input-group input:focus{
+      border-color:#fe4f4f;
+      outline:none;
+    }
+
+    .signup-btn{
+      width:100%;
+      padding:12px;
+      background:#fe4f4f;
+      border:none;
+      color:white;
+      font-size:16px;
+      border-radius:6px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .signup-btn:hover{
+      background:#fe4f4f;
+    }
+
+    .login-link{
+      text-align:center;
+      margin-top:15px;
+      font-size:14px;
+    }
+
+    .login-link a{
+      color:#fe4f4f;
+      text-decoration:none;
+    }
+
+    .login-link a:hover{
+      text-decoration:underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+
+    <form>
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm password" required>
+      </div>
+
+      <button type="submit" class="signup-btn">Create Account</button>
+
+      <div class="login-link">
+        Already have an account? <a href="#">Login</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
